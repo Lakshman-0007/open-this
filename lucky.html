@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorry Gowthuu 🥺</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <style>
+    body {
+      font-family: 'Baloo 2', cursive;
+      overflow-x: hidden;
+      background-color: #fdf2f8;
+    }
+
+    h1 {
+      animation: slideInTop 1.5s ease-out, twinkle 2s infinite;
+      text-shadow:
+        0 0 8px #ff69b4,
+        0 0 15px #ff1493,
+        0 0 25px #ff69b4;
+    }
+
+    .content-card {
+        animation: fadeInContent 1s ease-out forwards;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08) rotate(-2deg);
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .thank-you {
+      animation: fadeInThanks 2s ease-in-out forwards;
+    }
+
+    .floating-butterfly {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      background-image: url('https://media.tenor.com/images/5107e7cc16eb8da0caefd1720e29d0de/tenor.gif');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: fly 20s linear infinite;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    @keyframes fly {
+      0% { transform: translate(-10vw, 110vh) rotate(0deg) scale(0.8); }
+      20% { transform: translate(20vw, 60vh) rotate(20deg) scale(1); }
+      40% { transform: translate(45vw, 20vh) rotate(-10deg) scale(1.2); }
+      60% { transform: translate(70vw, 40vh) rotate(15deg) scale(1); }
+      80% { transform: translate(90vw, 80vh) rotate(5deg) scale(0.9); }
+      100% { transform: translate(110vw, -10vh) rotate(-20deg) scale(0.8); }
+    }
+
+    @keyframes fadeInContent {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideInTop {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeInThanks {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes twinkle {
+      0%, 100% { text-shadow: 0 0 8px #ff69b4, 0 0 15px #ff1493, 0 0 25px #ff69b4; }
+      50% { text-shadow: 0 0 12px #ff1493, 0 0 22px #ff69b4, 0 0 32px #ff1493; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="absolute top-0 left-0 w-full h-full">
+    <div class="floating-butterfly" style="animation-delay: 0s; animation-duration: 22s; opacity: 0.9;"></div>
+    <div class="floating-butterfly" style="animation-delay: -5s; animation-duration: 18s; opacity: 1; transform: scale(0.8);"></div>
+    <div class="floating-butterfly" style="animation-delay: -10s; animation-duration: 25s; opacity: 0.8;"></div>
+    <div class="floating-butterfly" style="animation-delay: -15s; animation-duration: 17s; opacity: 1; transform: scale(1.1);"></div>
+    <div class="floating-butterfly" style="animation-delay: -20s; animation-duration: 23s; opacity: 0.9;"></div>
+  </div>
+
+  <main class="relative z-10 p-4 min-h-screen flex flex-col items-center justify-center">
+    <div class="content-card bg-white/80 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-2xl max-w-3xl w-full text-center">
+      <h1 class="text-2xl md:text-3xl font-bold text-pink-500 mb-6">Sorry Gowthuu 🥺</h1>
+      <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+        Endhuku antha serious ga teesukuntunnav , and I hurt you when you least deserved it.
+        Please know that I never meant to cause you pain. Edhoo saradaki matladanu anna
+        anthey, and I can’t imagine my life without your
+        laughter, support, and friendship. 💕
+        I'm truly sorry 🥺. 
+      </p>
+
+      <div class="gallery flex justify-center mb-8">
+        <img 
+          src="http://getwallpapers.com/wallpaper/full/8/4/d/470003.jpg" 
+          alt="A cherished memory of best friends" 
+          class="rounded-2xl shadow-lg transition-transform duration-300 w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white"
+          onerror="this.onerror=null;this.src='https://placehold.co/400x400/f8bbd0/ffffff?text=Image+Not+Found';"
+        >
+      </div>
+
+      <button class="button bg-pink-500 text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-pink-600 transition-all duration-300" onclick="showThankYou()">
+        Forgive Me?
+      </button>
+
+      <div class="thank-you hidden mt-8 text-xl text-pink-600 font-semibold" id="thankYou">
+        🎉 Thank you for forgiving me, Bestie! You have no idea how much this means to me.<br>
+        I promise to never let anything come between us again. You're truly irreplaceable ✨<br><br>
+        <strong class="text-2xl">I will never fight with you gowthuuuu 🥹</strong><br>
+        <strong class="text-2xl">Missing you ra Gowthuuu 💗</strong>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function showThankYou() {
+      const message = document.getElementById('thankYou');
+      const button = document.querySelector('.button');
+      button.style.display = 'none';
+      message.classList.remove('hidden');
+      message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+</body>
+</html>
